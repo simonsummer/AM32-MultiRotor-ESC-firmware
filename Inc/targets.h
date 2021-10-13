@@ -1,6 +1,6 @@
 #ifndef USE_MAKE
 
-#define FD6288
+//#define FD6288
 //#define IFLIGHT
 //#define MP6531
 //#define TMOTOR55     // like iflight but with leds
@@ -12,6 +12,7 @@
 //#define AIKON20X20
 //#define AIKONSINGLE
 //#define FLYCOLOR
+#define HVFLYCOLOR
 
 //#define G072ESC
 //#define G071ENABLE
