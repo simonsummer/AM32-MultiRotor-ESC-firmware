@@ -260,9 +260,9 @@ char low_kv_filter_level = 20;
 uint16_t tim1_arr = TIM1_AUTORELOAD;         // current auto reset value
 uint16_t TIMER1_MAX_ARR = TIM1_AUTORELOAD;      // maximum auto reset register value
 int duty_cycle_maximum = TIM1_AUTORELOAD;     //restricted by temperature or low rpm throttle protect
-int low_rpm_level  = 40;        // thousand erpm used to set range for throttle resrictions
-int high_rpm_level = 170;      //
-int throttle_max_at_low_rpm  = 1700;
+int low_rpm_level  = 10;        // thousand erpm used to set range for throttle resrictions
+int high_rpm_level = 46;      //
+int throttle_max_at_low_rpm  = 400;
 int throttle_max_at_high_rpm = TIM1_AUTORELOAD;
 
 uint16_t commutation_intervals[6] = {0};
@@ -579,8 +579,8 @@ void loadEEpromSettings(){
 	   if(motor_kv < 300){
 		   low_rpm_throttle_limit = 0;
 	   }
-	   low_rpm_level  = motor_kv / 200 / (16 / motor_poles);
-	   high_rpm_level = (40 + (motor_kv / 100)) / (16/motor_poles);
+	   //low_rpm_level  = motor_kv / 200 / (16 / motor_poles);
+	   //high_rpm_level = (40 + (motor_kv / 100)) / (16/motor_poles);
 
 	if(!comp_pwm){
 		bi_direction = 0;
