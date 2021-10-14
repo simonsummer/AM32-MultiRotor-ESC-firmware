@@ -1391,7 +1391,7 @@ if(newinput > 2000){
   			  }else{
   				  if (newinput > (1000 + (servo_dead_band<<1))) {
   					  if (forward == dir_reversed) {
-  						  if(commutation_interval > 2500 || stepper_sine){
+  						  if(commutation_interval > 5000 || stepper_sine){
   							  forward = 1 - dir_reversed;
   							  zero_crosses = 0;
   							  old_routine = 1;
@@ -1405,7 +1405,7 @@ if(newinput > 2000){
   				  }
   				  if (newinput < (1000 -(servo_dead_band<<1))) {
   					  if (forward == (1 - dir_reversed)) {
-  						  if(commutation_interval > 2500 || stepper_sine){
+  						  if(commutation_interval > 5000 || stepper_sine){
   							  zero_crosses = 0;
   							  old_routine = 1;
   							  forward = dir_reversed;
