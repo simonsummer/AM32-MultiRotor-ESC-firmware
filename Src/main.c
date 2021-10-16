@@ -260,9 +260,9 @@ char low_kv_filter_level = 20;
 uint16_t tim1_arr = TIM1_AUTORELOAD;         // current auto reset value
 uint16_t TIMER1_MAX_ARR = TIM1_AUTORELOAD;      // maximum auto reset register value
 int duty_cycle_maximum = TIM1_AUTORELOAD;     //restricted by temperature or low rpm throttle protect
-int low_rpm_level  = 5;        // thousand erpm used to set range for throttle resrictions
-int high_rpm_level = 46;      //
-int throttle_max_at_low_rpm  = 400;
+int low_rpm_level  = 20;        // thousand erpm used to set range for throttle resrictions
+int high_rpm_level = 80;      //
+int throttle_max_at_low_rpm  = 600;
 int throttle_max_at_high_rpm = TIM1_AUTORELOAD;
 
 uint16_t commutation_intervals[6] = {0};
