@@ -260,7 +260,7 @@ char low_kv_filter_level = 20;
 uint16_t tim1_arr = TIM1_AUTORELOAD;         // current auto reset value
 uint16_t TIMER1_MAX_ARR = TIM1_AUTORELOAD;      // maximum auto reset register value
 int duty_cycle_maximum = TIM1_AUTORELOAD;     //restricted by temperature or low rpm throttle protect
-int low_rpm_level  = 10;        // thousand erpm used to set range for throttle resrictions
+int low_rpm_level  = 3;        // thousand erpm used to set range for throttle resrictions
 int high_rpm_level = 45;      //
 int throttle_max_at_low_rpm  = 1000;
 int throttle_max_at_high_rpm = TIM1_AUTORELOAD;
@@ -1391,7 +1391,7 @@ if(newinput > 2000){
   			  }else{
   				  if (newinput > (1000 + (servo_dead_band<<1))) {
   					  if (forward == dir_reversed) {
-  						  if(commutation_interval > 2500 || stepper_sine){
+  						  if(commutation_interval > 10000 || stepper_sine){
   							  forward = 1 - dir_reversed;
   							  zero_crosses = 0;
   							  old_routine = 1;
@@ -1405,7 +1405,7 @@ if(newinput > 2000){
   				  }
   				  if (newinput < (1000 -(servo_dead_band<<1))) {
   					  if (forward == (1 - dir_reversed)) {
-  						  if(commutation_interval > 2500 || stepper_sine){
+  						  if(commutation_interval > 10000 || stepper_sine){
   							  zero_crosses = 0;
   							  old_routine = 1;
   							  forward = dir_reversed;
