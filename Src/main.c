@@ -262,7 +262,7 @@ uint16_t TIMER1_MAX_ARR = TIM1_AUTORELOAD;      // maximum auto reset register v
 int duty_cycle_maximum = TIM1_AUTORELOAD;     //restricted by temperature or low rpm throttle protect
 int low_rpm_level  = 10;        // thousand erpm used to set range for throttle resrictions
 int high_rpm_level = 30;      //
-int throttle_max_at_low_rpm  = 200;
+int throttle_max_at_low_rpm  = 400;
 int throttle_max_at_high_rpm = TIM1_AUTORELOAD;
 
 uint16_t commutation_intervals[6] = {0};
@@ -959,9 +959,9 @@ if (running){
 		if(maximum_throttle_change_ramp){
 	//	max_duty_cycle_change = map(k_erpm, low_rpm_level, high_rpm_level, 1, 40);
 			if(average_interval > 500){
-				max_duty_cycle_change = 10;
+				max_duty_cycle_change = 1;
 			}else{
-				max_duty_cycle_change = 30;
+				max_duty_cycle_change = 3;
 			}
 
 	 if ((duty_cycle - last_duty_cycle) > max_duty_cycle_change){
