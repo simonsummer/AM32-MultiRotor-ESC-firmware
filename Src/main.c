@@ -961,7 +961,7 @@ if (running){
 			if(average_interval > 500){
 				max_duty_cycle_change = 1;
 			}else{
-				max_duty_cycle_change = 3;
+				max_duty_cycle_change = 1;
 			}
 
 	 if ((duty_cycle - last_duty_cycle) > max_duty_cycle_change){
